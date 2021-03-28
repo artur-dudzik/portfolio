@@ -48,6 +48,11 @@ router.post("/send", (req, res, next) => {
   console.log(req.body.email);
   console.log(req.body.message);
 
+  console.log(PORT)
+  console.log(MAIL_USER)
+  console.log(MAIL_PASS)
+  console.log(BUILD_PATH)
+
   let name = req.body.name;
   let email = req.body.email;
   let message = req.body.message;
@@ -71,7 +76,6 @@ router.post("/send", (req, res, next) => {
       });
     }
   });
-  console.log("Request OUT");
 });
 
 app.use("/", router);
