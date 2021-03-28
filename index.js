@@ -43,6 +43,11 @@ transporter.verify((err, success) => {
 });
 
 router.post("/send", (req, res, next) => {
+  console.log("Request IN: ");
+  console.log(req.body.name);
+  console.log(req.body.email);
+  console.log(req.body.message);
+
   let name = req.body.name;
   let email = req.body.email;
   let message = req.body.message;
@@ -66,10 +71,12 @@ router.post("/send", (req, res, next) => {
       });
     }
   });
+  console.log("Request OUT");
 });
 
 app.use("/", router);
 app.get("/", (req, res) => {
+  console.log("Serving UI: ");
   res.sendFile(path.join(BUILD_PATH, "index.html"));
 });
 
