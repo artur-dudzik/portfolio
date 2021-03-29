@@ -26,14 +26,9 @@ app.use(express.static(BUILD_PATH));
 let transport = {
   host: "smtp.gmail.com",
   port: 587,
-  secure: true,
   auth: {
     user: MAIL_USER,
     pass: MAIL_PASS,
-  },
-  tls: {
-    // do not fail on invalid certs
-    rejectUnauthorized: false
   }
 };
 
