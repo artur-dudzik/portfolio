@@ -74,6 +74,7 @@ router.post("/send", (req, res, next) => {
     console.log("Sent");
     if (err) {
       console.log("ERR");
+      console.error(err);
       res.json({
         status: err,
       });
