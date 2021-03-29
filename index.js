@@ -66,11 +66,14 @@ router.post("/send", (req, res, next) => {
   };
 
   transporter.sendMail(mail, (err, data) => {
+    console.log("Sent");
     if (err) {
+      console.log("ERR");
       res.json({
         status: err,
       });
     } else {
+      console.log("Success");
       res.json({
         status: "success",
       });
